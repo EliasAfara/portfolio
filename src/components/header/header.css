@@ -15,7 +15,26 @@
     column-gap: 1rem;
 }
 
-.nav__logo,
+.grey-color {
+    color: #868e96;
+}
+
+.nav .nav__logo {
+    display: block;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: var(--title-color);
+    margin-top: 10px;
+}
+
+.nav__logo .logo-name {
+    font-family: 'Agustina',
+        sans-serif;
+    font-weight: bold;
+    font-variant-ligatures: no-common-ligatures;
+    padding: 0 10px;
+}
+
 .nav__toggle {
     color: var(--title-color);
     font-weight: var(--font-medium);
