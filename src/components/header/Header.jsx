@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <header className='header'>
       <nav className='nav container'>
-        <span className='nav__logo'>Portfolio</span>
+        <span className='nav__logo'>Elias Portfolio</span>
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className='nav__list grid'>
             <li className='nav__item'>
