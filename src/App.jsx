@@ -1,12 +1,10 @@
-import { useState } from "react";
 import "./App.css";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <>
-      <div>
-        <h1>Elias</h1>
-      </div>
+      <Header />
     </>
   );
 }
