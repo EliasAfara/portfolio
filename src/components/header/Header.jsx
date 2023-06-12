@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import "./header.css";
-import * as Icons from "react-icons/hi";
-
-import config from "../../config";
-
-const DynamicHiIcon = ({ name }) => {
-  const IconComponent = Icons[name];
-  if (!IconComponent) return <Icons.HiBan className='nav__icon' />;
-  return <IconComponent className='nav__icon' />;
-};
+import { navLinks } from "../../config";
+import DynamicIcon from "../DynamicIcon";
+import { HiX, HiOutlineMenu } from "react-icons/hi";
 
 const Header = () => {
   window.addEventListener("scroll", function () {
@@ -17,14 +11,12 @@ const Header = () => {
     else header.classList.remove("scroll-header");
   });
 
-  const navLinks = config.navLinks;
-
   const [Toggle, showMenu] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
 
   return (
     <header className='header'>
-      <nav className='nav' style={{ padding: "0px 50px" }}>
+      <nav className='nav'>
         <a href='/' className='nav__logo'>
           <span className='grey-color'> &lt;</span>
           <span className='logo-name'>Elias</span>
@@ -43,18 +35,17 @@ const Header = () => {
                       activeNav === id ? "nav__link active-link" : "nav__link"
                     }
                   >
-                    {/* <HiOutlineHome className='nav__icon' /> */}
-                    <DynamicHiIcon name={icon} />
+                    <DynamicIcon name={icon} className={"nav__icon"} />
                     {name}
                   </a>
                 </li>
               );
             })}
           </ul>
-          <Icons.HiX className='nav__close' onClick={() => showMenu(!Toggle)} />
+          <HiX className='nav__close' onClick={() => showMenu(!Toggle)} />
         </div>
         <div className='nav__toggle' onClick={() => showMenu(!Toggle)}>
-          <Icons.HiOutlineMenu />
+          <HiOutlineMenu />
         </div>
       </nav>
     </header>
