@@ -24,14 +24,17 @@ const socialMedia = [
   {
     name: "GitHub",
     url: "https://github.com/eliasafara",
+    icon: "FiGithub",
   },
   {
     name: "Twitter",
     url: "https://twitter.com/thegrindev",
+    icon: "FiTwitter",
   },
   {
     name: "Linkedin",
     url: "https://www.linkedin.com/in/eliasafara",
+    icon: "FiLinkedin",
   },
 ];
 
