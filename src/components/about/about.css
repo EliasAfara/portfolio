@@ -8,6 +8,7 @@
     width: 350px;
     border-radius: 1.5rem;
     justify-self: center;
+    /* filter: drop-shadow(8px 8px 0px #3BADD4); */
 }
 
 .about__info {
