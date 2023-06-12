@@ -75,4 +75,4 @@ const navLinks = [
   },
 ];
 
-export { contactInfo, socialMedia, navLinks };
+export { contactInfo, socialMedia, navLinks, education };
