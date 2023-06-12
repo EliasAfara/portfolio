@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import config from "../config";
+import { contactInfo } from "../config";
 import Side from "./Side";
 
 const StyledLinkWrapper = styled.div`
@@ -39,8 +39,7 @@ const StyledLinkWrapper = styled.div`
 const Email = () => (
   <Side orientation='right'>
     <StyledLinkWrapper>
-      <a href={`mailto:${config.email}`}>{config.email}</a>
-      {/* <a href={`mailto:afaraelias@gmail.com`}>afaraelias@gmail.com</a> */}
+      <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
     </StyledLinkWrapper>
   </Side>
 );
