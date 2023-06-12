@@ -28,7 +28,16 @@ const Education = () => {
                   </>
                 )}
                 <div>
-                  <h3 className='qualification__title'>{item.schoolName}</h3>
+                  <h3 className='qualification__title'>
+                    <a
+                      href={item.schoolURL}
+                      aria-label={item.schoolName}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      {item.schoolName}
+                    </a>
+                  </h3>
                   <span className='qualification__subtitle'>{item.degree}</span>
                   <div className='qualification__calendar'>
                     <HiOutlineCalendar className='qualification__calendar-icon' />

@@ -5,15 +5,17 @@ const contactInfo = {
 const education = [
   {
     schoolName: "EPITA - ECOLE D'INGÉNIEURS INFORMATIQUE PARIS",
-    degree: "MSc in CS - Software Engineering",
+    degree: "Master of Science in CS - Software Engineering",
     date: "September 2021 - March 2023",
     location: "Le Kremlin-Bicêtre, France",
+    schoolURL: "https://www.epita.fr/en/",
   },
   {
     schoolName: "Phoenicia University",
     degree: "Bachelor of Science in Computer Science",
     date: "January 2017 - March 2021",
     location: "Lebanon",
+    schoolURL: "https://www.pu.edu.lb/",
   },
 ];
 
