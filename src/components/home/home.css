@@ -1,5 +1,6 @@
 .home__container {
     row-gap: 7rem;
+    height: 100vh;
 }
 
 .home__content {
@@ -59,7 +60,7 @@
 }
 
 .home__img {
-    background: url(../../assets/profile.jpg);
+    background: url(../../assets/EliasAfara.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
