@@ -75,10 +75,10 @@
 
 /* BREAK POINTS */
 @media screen and (max-width: 768px) {
-    .header {
+    /* .header {
         top: initial;
         bottom: 0;
-    }
+    } */
 
     .nav {
         height: var(--header-height);
@@ -87,24 +87,28 @@
 
     .nav__menu {
         position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
+        top: -100%;
+        right: 0;
+        width: 35%;
+        height: 100%;
         background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
-        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-        border-radius: 1.5rem 1.5rem 0 0;
+        box-shadow: -1px 1px 3px 0px #00000026;
+        /* border-radius: 1.5rem 1.5rem 0 0; */
         transition: .3s;
     }
 
     .show-menu {
-        bottom: 0;
+        top: 0;
     }
 
     .nav__list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        height: inherit;
     }
 
     .nav__icon {
@@ -114,8 +118,8 @@
 
     .nav__close {
         position: absolute;
-        right: 1.3rem;
-        bottom: .5rem;
+        right: 1rem;
+        top: .6rem;
         font-size: 1.5rem;
         cursor: pointer;
         color: var(--title-color);
