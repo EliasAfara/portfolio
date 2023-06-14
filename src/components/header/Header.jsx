@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./header.css";
-import { navLinks } from "../../config";
+import { navLinks } from "@/config";
 import DynamicIcon from "../DynamicIcon";
 import { HiX, HiOutlineMenu } from "react-icons/hi";
 
