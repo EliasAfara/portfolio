@@ -1,6 +1,8 @@
 {
   "name": "portfolio",
   "private": true,
+  "description": "Personal Website",
+  "author": "Elias AFARA <afaraelias@gmail.com>",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
