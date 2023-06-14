@@ -82,7 +82,7 @@
 
     .nav {
         height: var(--header-height);
-        padding: 0px 20px;
+        padding: 35px 30px;
     }
 
     .nav__menu {
@@ -130,7 +130,7 @@
     }
 
     .nav__toggle {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         cursor: pointer;
     }
 
