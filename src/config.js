@@ -38,6 +38,16 @@ const socialMedia = [
     url: "https://www.linkedin.com/in/eliasafara",
     icon: "FiLinkedin",
   },
+  {
+    name: "Youtube",
+    url: "https://www.youtube.com/c/eliasafara",
+    icon: "FiYoutube",
+  },
+  {
+    name: "Codepen",
+    url: "https://codepen.io/eliasafara",
+    icon: "FiCodepen",
+  },
 ];
 
 const navLinks = [
