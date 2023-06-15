@@ -19,8 +19,34 @@ const education = [
   },
 ];
 
-// Note: currently trying to using markdown files for the work experience
-const workExperience = [];
+const workExperience = [
+  {
+    date: "2022-09-12",
+    title: "Software Engineer Intern",
+    company: "Rangor Poker",
+    location: "Paris, France",
+    range: "September 2022 - March 2023",
+    url: "https://www.linkedin.com/company/rangor-poker/about/",
+    activities: [
+      "Developed an educational learning path that provides the users with access to professional poker training.",
+      "Developed & implemented multiple features that contribute in increasing users' interest in the company's product and driving more traffic.",
+      "Technology Stack Used: Vue, Vuex, Vuetify, Node.js, MongoDB, Strapi, Git",
+    ],
+  },
+  {
+    date: "2020-08-15",
+    title: "Full Stack Web Developer Intern",
+    company: "Bitwork",
+    location: "Beirut, Lebanon",
+    range: "August 2020 - October 2020",
+    url: "https://www.linkedin.com/company/bitwork-studio/about/",
+    activities: [
+      "Worked in a five-person team on building a monetization portal which creates & manages advertisements.",
+      "Developed & implemented multiple features which contribute in creating an advertisement.",
+      "Technology Stack Used: Laravel, AngularJS, Bootstrap, MySQL, Git",
+    ],
+  },
+];
 
 const socialMedia = [
   {
@@ -90,4 +116,4 @@ const navLinks = [
   },
 ];
 
-export { contactInfo, socialMedia, navLinks, education };
+export { contactInfo, socialMedia, navLinks, workExperience, education };
