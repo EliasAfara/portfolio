@@ -175,28 +175,28 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(26px, 5vw, var(--fz-heading));
     white-space: nowrap;
 
-    &:before {
-      position: relative;
-      bottom: 4px;
-      counter-increment: section;
-      content: '0' counter(section) '.';
-      margin-right: 10px;
-      color: var(--green);
-      font-family: var(--font-mono);
-      font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
-      font-weight: 400;
+    // &:before {
+    //   position: relative;
+    //   bottom: 4px;
+    //   counter-increment: section;
+    //   content: '0' counter(section) '.';
+    //   margin-right: 10px;
+    //   color: var(--green);
+    //   font-family: var(--font-mono);
+    //   font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
+    //   font-weight: 400;
 
-      @media (max-width: 480px) {
-        margin-bottom: -3px;
-        margin-right: 5px;
-      }
-    }
+    //   @media (max-width: 480px) {
+    //     margin-bottom: -3px;
+    //     margin-right: 5px;
+    //   }
+    // }
 
     &:after {
       content: '';
       display: block;
       position: relative;
-      top: -5px;
+      // top: -5px;
       width: 300px;
       height: 1px;
       margin-left: 20px;
