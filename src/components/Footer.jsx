@@ -121,7 +121,12 @@ const Footer = () => {
       </StyledSocialLinks>
 
       <StyledCredit tabIndex='-1'>
-        <a href='https://github.com/bchiang7/v4'>
+        <a
+          href='https://github.com/EliasAfara'
+          aria-label='Designed and built by Elias Afara'
+          target='_blank'
+          rel='noreferrer'
+        >
           <div>Designed &amp; Built by Elias Afara</div>
 
           {import.meta.env.PROD &
