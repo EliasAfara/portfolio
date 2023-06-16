@@ -6,7 +6,7 @@ import Home from "./components/sections/Home";
 import About from "./components/sections/About";
 import Experience from "./components/sections/Experience";
 import Education from "./components/sections/Education";
-import Skills from "./components/skills/Skills";
+import Skills from "./components/sections/Skills";
 
 // components
 import Email from "./components/Email";

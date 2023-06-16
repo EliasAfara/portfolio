@@ -1,0 +1,22 @@
+.skill-icon {
+    font-size: 48px;
+    position: absolute;
+    /* Position the icon absolutely */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.hexagon {
+    /* -webkit-transition: background .4s;
+    transition: background .4s;
+    */
+
+    transition:
+        background 0.4s;
+}
+
+.skill-icon {
+    transition: color 0.4s
+}
