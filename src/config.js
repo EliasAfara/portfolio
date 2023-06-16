@@ -116,4 +116,78 @@ const navLinks = [
   },
 ];
 
-export { contactInfo, socialMedia, navLinks, workExperience, education };
+const skills = [
+  {
+    name: "JavaScript",
+    icon: "",
+  },
+  {
+    name: "TypeScript",
+    icon: "",
+  },
+  {
+    name: "React",
+    icon: "",
+  },
+  {
+    name: "Node.js",
+    icon: "",
+  },
+  {
+    name: "Express.js",
+    icon: "",
+  },
+  {
+    name: "Vue.js",
+    icon: "",
+  },
+  {
+    name: "MongoDB",
+    icon: "",
+  },
+  {
+    name: "JavaScript",
+    icon: "",
+  },
+  {
+    name: "JavaScript",
+    icon: "",
+  },
+  {
+    name: "JavaScript",
+    icon: "",
+  },
+  {
+    name: "JavaScript",
+    icon: "",
+  },
+  {
+    name: "JavaScript",
+    icon: "",
+  },
+  {
+    name: "JavaScript",
+    icon: "",
+  },
+  {
+    name: "JavaScript",
+    icon: "",
+  },
+];
+
+const connectSection = {
+  openToWork: true,
+  openToWorkMessage:
+    "Open to new opportunities! I'm actively seeking exciting projects and roles where I can contribute my skills and passion. Let's connect and explore how we can work and make a difference together.",
+  notOpenToWorkMessage:
+    "Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+};
+
+export {
+  contactInfo,
+  socialMedia,
+  navLinks,
+  workExperience,
+  education,
+  connectSection,
+};
