@@ -7,6 +7,7 @@ import About from "./components/sections/About";
 import Experience from "./components/sections/Experience";
 import Education from "./components/sections/Education";
 import Skills from "./components/sections/Skills";
+import Contact from "./components/sections/Contact";
 
 // components
 import Email from "./components/Email";
@@ -38,8 +39,8 @@ function App() {
           <Education />
           <Experience />
           <Skills />
-          {/* <Projects />
-        <Contact /> */}
+          <Contact />
+          {/* <Projects />*/}
         </StyledMainContainer>
 
         <Footer />
