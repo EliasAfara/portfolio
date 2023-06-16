@@ -42,7 +42,7 @@ const Experience = () => {
                 return (
                   <StyledTabButton
                     key={i}
-                    isActive={activeTabId === i}
+                    isActiveTab={activeTabId === i}
                     onClick={() => setActiveTabId(i)}
                     ref={(el) => (tabs.current[i] = el)}
                     id={`tab-${i}`}
@@ -71,6 +71,7 @@ const Experience = () => {
                     aria-labelledby={`tab-${i}`}
                     aria-hidden={activeTabId !== i}
                     hidden={activeTabId !== i}
+                    key={i}
                   >
                     <h3>
                       <span>{title}</span>
@@ -139,15 +140,16 @@ const StyledTabList = styled.div`
   @media (max-width: 600px) {
     display: flex;
     overflow-x: auto;
-    width: calc(100% + 100px);
-    padding-left: 50px;
-    margin-left: -50px;
+    scroll-behavior: smooth;
+    width: 100%;
+    // padding-left: 50px;
+    // margin-left: -50px;
     margin-bottom: 30px;
   }
   @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
+    width: 100%;
+    // padding-left: 25px;
+    // margin-left: -25px;
   }
 
   li {
@@ -179,7 +181,8 @@ const StyledTabButton = styled.button`
   padding: 0 20px 2px;
   border-left: 2px solid var(--lightest-navy);
   background-color: transparent;
-  color: ${({ isActive }) => (isActive ? "var(--green)" : "var(--slate)")};
+  color: ${({ isActiveTab }) =>
+    isActiveTab ? "var(--green)" : "var(--slate)"};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
@@ -190,11 +193,17 @@ const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 120px;
+    max-width: 180px;
+    min-width: 180px;
     padding: 0 15px;
     border-left: 0;
     border-bottom: 2px solid var(--lightest-navy);
     text-align: center;
+  }
+
+  @media (max-width: 390px) {
+    max-width: 160px;
+    min-width: 160px;
   }
 
   &:hover,
@@ -222,15 +231,19 @@ const StyledHighlight = styled.div`
     top: auto;
     bottom: 0;
     width: 100%;
-    max-width: var(--tab-width);
+    max-width: 180px;
     height: 2px;
-    margin-left: 50px;
-    transform: translateX(
-      calc(${({ activeTabId }) => activeTabId} * var(--tab-width))
-    );
+    // margin-left: 50px;
+    transform: translateX(calc(${({ activeTabId }) => activeTabId} * 180px));
+  }
+
+  @media (max-width: 390px) {
+    width: 100%;
+    max-width: 160px;
+    transform: translateX(calc(${({ activeTabId }) => activeTabId} * 160px));
   }
   @media (max-width: 480px) {
-    margin-left: 25px;
+    // margin-left: 25px;
   }
 `;
 
