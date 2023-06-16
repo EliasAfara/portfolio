@@ -166,6 +166,58 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 8vw, 60px);
   }
 
+  .in-between-heading {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 10px 0 40px;
+    width: 100%;
+    font-size: clamp(26px, 5vw, var(--fz-heading));
+    white-space: nowrap;
+
+    &:before {
+      content: '';
+      display: none;
+      position: relative;
+      width: 0px;
+      height: 1px;
+      margin-right: 20px;
+      background-color: var(--lightest-navy);
+
+      @media (max-width: 1080px) {
+        width: 300px;
+      }
+      @media (max-width: 768px) {
+        display: flex;
+        width: 100%;
+      }
+      @media (max-width: 600px) {
+        margin-left: 10px;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      // top: -5px;
+      width: 400px;
+      height: 1px;
+      margin-left: 20px;
+      background-color: var(--lightest-navy);
+
+      @media (max-width: 1080px) {
+        width: 300px;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      @media (max-width: 600px) {
+        margin-left: 10px;
+      }
+    }
+  }
+
   .numbered-heading {
     display: flex;
     align-items: center;
@@ -197,13 +249,13 @@ const GlobalStyle = createGlobalStyle`
       display: block;
       position: relative;
       // top: -5px;
-      width: 300px;
+      width: 400px;
       height: 1px;
       margin-left: 20px;
       background-color: var(--lightest-navy);
 
       @media (max-width: 1080px) {
-        width: 200px;
+        width: 300px;
       }
       @media (max-width: 768px) {
         width: 100%;

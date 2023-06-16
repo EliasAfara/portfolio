@@ -52,7 +52,7 @@ const Skills = () => {
 
   return (
     <StyledSkillsSection id='skills'>
-      <h2 className='numbered-heading'>Skills</h2>
+      <h2 className='in-between-heading'>Skills</h2>
       <div className='inner'>
         <ResponsiveHoneycomb
           className='hexagon-container'
