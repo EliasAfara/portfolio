@@ -46,6 +46,7 @@
 .nav__toggle {
     color: var(--title-color);
     font-weight: var(--font-medium);
+    width: fit-content;
 }
 
 .nav__list {
