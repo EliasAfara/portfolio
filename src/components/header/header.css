@@ -47,6 +47,7 @@
     color: var(--title-color);
     font-weight: var(--font-medium);
     width: fit-content;
+    background-color: tomato;
 }
 
 .nav__list {
@@ -146,6 +147,7 @@
         top: 1.6rem;
         font-size: 1.5rem;
         cursor: pointer;
+        background-color: rgb(102, 102, 238);
         color: var(--title-color);
     }
 
