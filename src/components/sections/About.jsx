@@ -122,7 +122,7 @@ const About = () => {
                 <circle
                   fill='none'
                   stroke='#d0e5ff'
-                  stroke-width='75'
+                  strokeWidth='75'
                   cx='167.6'
                   cy='167.6'
                   r='130.1'
