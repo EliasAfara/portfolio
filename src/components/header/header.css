@@ -16,6 +16,13 @@
     column-gap: 1rem;
 }
 
+.nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
 .grey-color {
     color: #868e96;
 }
@@ -43,7 +50,10 @@
 
 .nav__list {
     display: flex;
+    align-items: center;
     column-gap: 2rem;
+    list-style: none;
+    height: 100%;
 }
 
 .nav__link {
@@ -86,10 +96,14 @@
     }
 
     .nav__menu {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
         position: fixed;
         top: -100%;
         right: 0;
-        width: 35%;
+        width: 50%;
         height: 100%;
         background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
@@ -111,6 +125,14 @@
         height: inherit;
     }
 
+    .nav__item {
+        width: 100%;
+    }
+
+    .nav__link {
+        padding: 5px 0;
+    }
+
     .nav__icon {
         font-size: 1.2rem;
 
@@ -118,8 +140,9 @@
 
     .nav__close {
         position: absolute;
-        right: 1rem;
-        top: .6rem;
+        width: fit-content;
+        right: 1.8rem;
+        top: 1.6rem;
         font-size: 1.5rem;
         cursor: pointer;
         color: var(--title-color);

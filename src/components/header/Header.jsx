@@ -3,6 +3,14 @@ import "./header.css";
 import { navLinks } from "@/config";
 import DynamicIcon from "../DynamicIcon";
 import { HiX, HiOutlineMenu } from "react-icons/hi";
+import styled from "styled-components";
+import Resume from "@/assets/Resume_EliasAfara_2023_EN.pdf";
+
+const ResumeLink = styled.a`
+  ${({ theme }) => theme.mixins.smallButton};
+  margin-left: 15px;
+  font-size: var(--fz-xs);
+`;
 
 const Header = () => {
   window.addEventListener("scroll", function () {
@@ -13,6 +21,11 @@ const Header = () => {
 
   const [Toggle, showMenu] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
+
+  const handleNavItemClick = (id) => {
+    setActiveNav(id);
+    showMenu(false);
+  };
 
   return (
     <header className='header'>
@@ -30,7 +43,7 @@ const Header = () => {
                 <li className='nav__item' key={index}>
                   <a
                     href={url}
-                    onClick={() => setActiveNav(`${id}`)}
+                    onClick={() => handleNavItemClick(`${id}`)}
                     className={
                       activeNav === id ? "nav__link active-link" : "nav__link"
                     }
@@ -42,8 +55,16 @@ const Header = () => {
               );
             })}
           </ul>
-          <HiX className='nav__close' onClick={() => showMenu(!Toggle)} />
+          {/* TODO: Lofi music player to be added here */}
+          <ResumeLink href={Resume} target='_blank' rel='noopener noreferrer'>
+            Resume
+          </ResumeLink>
         </div>
+        {Toggle && (
+          <HiX className='nav__close' onClick={() => showMenu(!Toggle)} />
+        )}
+        {/* {Toggle && <div className='nav__overlay' />} */}
+
         <div className='nav__toggle' onClick={() => showMenu(!Toggle)}>
           <HiOutlineMenu />
         </div>
