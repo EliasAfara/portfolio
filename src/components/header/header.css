@@ -46,7 +46,7 @@
 .nav__toggle {
     color: var(--title-color);
     font-weight: var(--font-medium);
-    width: fit-content;
+    width: 23px;
     background-color: tomato;
 }
 
@@ -142,7 +142,7 @@
 
     .nav__close {
         position: absolute;
-        width: fit-content;
+        width: 23px;
         right: 1.8rem;
         top: 1.6rem;
         font-size: 1.5rem;
