@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import AboutImg from "@/assets/EliasAfara.jpeg";
+// import AboutImg from "@/assets/EliasAfara.jpeg";
+import AboutImg from "@/assets/EliasAfara-transparent.png";
 
 const StyledAboutSection = styled.section`
   max-width: 1000px;
@@ -58,7 +59,7 @@ const StyledAboutImage = styled.img`
   justify-self: center;
 
   // remove image white background
-  mix-blend-mode: multiply;
+  // mix-blend-mode: multiply;
 
   //   unselectable
   user-drag: none;
@@ -86,7 +87,51 @@ const About = () => {
     <StyledAboutSection id='about'>
       <h2 className='numbered-heading'>About Me</h2>
       <div className='inner'>
-        <StyledAboutImage src={AboutImg} alt='about' draggable='false' />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            height: "fit-content",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+            }}
+          >
+            <StyledAboutImage src={AboutImg} alt='about' draggable='false' />
+            <div
+              style={{
+                position: "absolute",
+                width: "10rem",
+                zIndex: "-1",
+                bottom: 0,
+                left: 0,
+                marginBottom: "-2.7rem",
+                marginLeft: "-2.4rem",
+              }}
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                x='0px'
+                y='0px'
+                viewBox='0 0 335.2 335.2'
+                width='120'
+                height='120'
+              >
+                <circle
+                  fill='none'
+                  stroke='#d0e5ff'
+                  stroke-width='75'
+                  cx='167.6'
+                  cy='167.6'
+                  r='130.1'
+                ></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+
         <StyledText>
           <div>
             <p>
