@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { projects } from "@/config";
 
-import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { FaYoutube } from "react-icons/fa";
+import { FiGithub, FiExternalLink, FiYoutube } from "react-icons/fi";
 
 const StyledProjectsSection = styled.section`
   .inner {
@@ -15,6 +14,12 @@ const StyledProjectsSection = styled.section`
 `;
 
 const Projects = () => {
+  const loadImage = (imageName) => {
+    const path = "../../assets/";
+    return new URL(`${path}${imageName}`, import.meta.url).href;
+    // vite react dynamic import image - dynamic URL pattern via template literal
+  };
+
   return (
     <StyledProjectsSection id='projects'>
       <h2 className='numbered-heading'>Projects</h2>
@@ -22,69 +27,80 @@ const Projects = () => {
         {projects &&
           projects.map(
             (
-              { title, cover, github, external, youtube, tech, description },
+              {
+                title,
+                cover_name,
+                github,
+                external,
+                youtube,
+                tech,
+                description,
+              },
               index
-            ) => (
-              <StyledProject key={index}>
-                <div className='project-content'>
-                  <div>
-                    <p className='project-overline'>Featured Project</p>
+            ) => {
+              const image = loadImage(cover_name);
+              return (
+                <StyledProject key={index}>
+                  <div className='project-content'>
+                    <div>
+                      <p className='project-overline'>Featured Project</p>
 
-                    <h3 className='project-title'>
-                      <a href={external}>{title}</a>
-                    </h3>
+                      <h3 className='project-title'>
+                        <a href={external}>{title}</a>
+                      </h3>
 
-                    <div className='project-description'>
-                      <p>{description}</p>
-                    </div>
+                      <div className='project-description'>
+                        <p>{description}</p>
+                      </div>
 
-                    {tech.length && (
-                      <ul className='project-tech-list'>
-                        {tech.map((tech, i) => (
-                          <li key={i}>{tech}</li>
-                        ))}
-                      </ul>
-                    )}
-
-                    <div className='project-links'>
-                      {github && (
-                        <a href={github} aria-label='GitHub Link'>
-                          <FiGithub />
-                        </a>
+                      {tech.length && (
+                        <ul className='project-tech-list'>
+                          {tech.map((tech, i) => (
+                            <li key={i}>{tech}</li>
+                          ))}
+                        </ul>
                       )}
-                      {external && (
-                        <a
-                          href={external}
-                          aria-label='External Link'
-                          className='external'
-                        >
-                          <FiExternalLink />
-                        </a>
-                      )}
-                      {youtube && (
-                        <a
-                          href={youtube}
-                          aria-label='youtube Link'
-                          className='external'
-                        >
-                          <FaYoutube />
-                        </a>
-                      )}
+
+                      <div className='project-links'>
+                        {github && (
+                          <a href={github} aria-label='GitHub Link'>
+                            <FiGithub />
+                          </a>
+                        )}
+                        {external && (
+                          <a
+                            href={external}
+                            aria-label='External Link'
+                            className='external'
+                          >
+                            <FiExternalLink />
+                          </a>
+                        )}
+                        {youtube && (
+                          <a
+                            href={youtube}
+                            aria-label='youtube Link'
+                            className='external'
+                          >
+                            <FiYoutube />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className='project-image'>
-                  <a
-                    href={external ? external : github ? github : "#"}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <img src={cover} alt={title} className='img' />
-                  </a>
-                </div>
-              </StyledProject>
-            )
+                  <div className='project-image'>
+                    <a
+                      href={external ? external : github ? github : "#"}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <img src={image} alt={title} className='img' />
+                    </a>
+                  </div>
+                </StyledProject>
+              );
+            }
           )}
       </StyledProjectsGrid>
     </StyledProjectsSection>

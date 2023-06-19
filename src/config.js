@@ -178,7 +178,7 @@ const skills = [
 const projects = [
   {
     title: "Netflix Clone",
-    cover: "src/assets/projects/netflix-clone.png",
+    cover_name: "netflix-clone.png",
     github: "https://github.com/EliasAfara/netflix-clone",
     external: null,
     youtube:
@@ -197,7 +197,7 @@ const projects = [
   },
   {
     title: "Blockchain-based E-Voting System",
-    cover: "src/assets/projects/blockchain-voting-system.png",
+    cover_name: "blockchain-voting-system.png",
     github: "https://github.com/smart-elections",
     external: null,
     youtube: null,
@@ -215,7 +215,7 @@ const projects = [
   },
   {
     title: "Decentralized Light-Twitter Clone",
-    cover: "src/assets/projects/solidity-twitter-clone.png",
+    cover_name: "solidity-twitter-clone.png",
     github: "https://github.com/EliasAfara/Solidity-Dapp-Twitter-Clone",
     external: "https://solidity-dapp-twitter-clone-eliasafara.netlify.app/",
     youtube: null,
@@ -225,7 +225,7 @@ const projects = [
   },
   {
     title: "Lebanon Freecycle",
-    cover: "src/assets/projects/lebanon_freecycle.png",
+    cover_name: "lebanon_freecycle.png",
     github: "https://github.com/EliasAfara/Lebanon-Freecycle",
     external: null,
     youtube:
