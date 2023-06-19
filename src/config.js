@@ -84,16 +84,16 @@ const navLinks = [
     icon: "HiOutlineUser",
   },
   {
-    id: "#experience",
-    name: "Experience",
-    url: "/#experience",
-    icon: "HiOutlineBriefcase",
-  },
-  {
     id: "#education",
     name: "Education",
     url: "/#education",
     icon: "HiOutlineAcademicCap",
+  },
+  {
+    id: "#experience",
+    name: "Experience",
+    url: "/#experience",
+    icon: "HiOutlineBriefcase",
   },
   {
     id: "#skills",
@@ -175,6 +175,67 @@ const skills = [
   },
 ];
 
+const projects = [
+  {
+    title: "Netflix Clone",
+    cover: "src/assets/projects/netflix-clone.png",
+    github: "https://github.com/EliasAfara/netflix-clone",
+    external: null,
+    youtube:
+      "https://www.youtube.com/watch?v=wEl11pbAQAE&ab_channel=EliasAfara",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Java",
+      "PostgreSQL",
+      "React-Context-API",
+    ],
+    description:
+      "A web app that mimics the functionalities and features of the popular streaming platform Netflix. Some of the functionalities include: user authentication, movie ratings, compute and display the 10 most popular and most viewed movies, etc.",
+  },
+  {
+    title: "Blockchain-based E-Voting System",
+    cover: "src/assets/projects/blockchain-voting-system.png",
+    github: "https://github.com/smart-elections",
+    external: null,
+    youtube: null,
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Ethers",
+      "MetaMask",
+      "React-Context-API",
+    ],
+    description:
+      "Worked in a three-person team to research & develop a decentralized e-voting system using blockchain technology. The project involved developing a web application that allows users to vote for candidates and a blockchain network that stores the votes and ensures the integrity of the voting process.",
+  },
+  {
+    title: "Decentralized Light-Twitter Clone",
+    cover: "src/assets/projects/solidity-twitter-clone.png",
+    github: "https://github.com/EliasAfara/Solidity-Dapp-Twitter-Clone",
+    external: "https://solidity-dapp-twitter-clone-eliasafara.netlify.app/",
+    youtube: null,
+    tech: ["React", "JavaScript", "Solidity", "MetaMask"],
+    description:
+      "The object of this class project was to develop a decentralized Twitter clone using Solidity and React. The project involved developing a smart contract that allows users to create tweets and a web application that allows users to interact with the smart contract.",
+  },
+  {
+    title: "Lebanon Freecycle",
+    cover: "src/assets/projects/lebanon_freecycle.png",
+    github: "https://github.com/EliasAfara/Lebanon-Freecycle",
+    external: null,
+    youtube:
+      "https://www.youtube.com/watch?v=gi0-auwXxlo&ab_channel=EliasAfara",
+    tech: ["React", "Redux", "Node.js", "Express", "MongoDB"],
+    description:
+      "Non-profit Lebanese social donation platform that aims to help the citizens to connect with each other and donate their items to the ones in need.",
+  },
+];
+
 const connectSection = {
   openToWork: true,
   openToWorkMessage:
@@ -190,4 +251,5 @@ export {
   workExperience,
   education,
   connectSection,
+  projects,
 };
