@@ -17,6 +17,7 @@ const Projects = () => {
   const loadImage = (imageName) => {
     return new URL(`../../assets/${imageName}`, import.meta.url).href;
     // vite react dynamic import image - dynamic URL pattern via template literal
+    // ref: https://vitejs.dev/guide/assets.html#the-public-directory
   };
 
   return (
