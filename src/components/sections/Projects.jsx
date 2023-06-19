@@ -15,8 +15,7 @@ const StyledProjectsSection = styled.section`
 
 const Projects = () => {
   const loadImage = (imageName) => {
-    const path = "../../assets/";
-    return new URL(`${path}${imageName}`, import.meta.url).href;
+    return new URL(`../../assets/${imageName}`, import.meta.url).href;
     // vite react dynamic import image - dynamic URL pattern via template literal
   };
 
