@@ -42,7 +42,7 @@ const Experience = () => {
                 return (
                   <StyledTabButton
                     key={i}
-                    isActiveTab={activeTabId === i}
+                    isactivetab={activeTabId === i ? "true" : "false"}
                     onClick={() => setActiveTabId(i)}
                     ref={(el) => (tabs.current[i] = el)}
                     id={`tab-${i}`}
@@ -56,7 +56,7 @@ const Experience = () => {
                 );
               }
             )}
-          <StyledHighlight activeTabId={activeTabId} />
+          <StyledHighlight activetabid={activeTabId} />
         </StyledTabList>
         {/*  */}
         <StyledTabPanels>
@@ -181,8 +181,8 @@ const StyledTabButton = styled.button`
   padding: 0 20px 2px;
   border-left: 2px solid var(--lightest-navy);
   background-color: transparent;
-  color: ${({ isActiveTab }) =>
-    isActiveTab ? "var(--green)" : "var(--slate)"};
+  color: ${({ isactivetab }) =>
+    isactivetab ? "var(--green)" : "var(--slate)"};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
@@ -222,7 +222,7 @@ const StyledHighlight = styled.div`
   border-radius: var(--border-radius);
   background: var(--green);
   transform: translateY(
-    calc(${({ activeTabId }) => activeTabId} * var(--tab-height))
+    calc(${({ activetabid }) => activetabid} * var(--tab-height))
   );
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
@@ -234,13 +234,13 @@ const StyledHighlight = styled.div`
     max-width: 180px;
     height: 2px;
     // margin-left: 50px;
-    transform: translateX(calc(${({ activeTabId }) => activeTabId} * 180px));
+    transform: translateX(calc(${({ activetabid }) => activetabid} * 180px));
   }
 
   @media (max-width: 390px) {
     width: 100%;
     max-width: 160px;
-    transform: translateX(calc(${({ activeTabId }) => activeTabId} * 160px));
+    transform: translateX(calc(${({ activetabid }) => activetabid} * 160px));
   }
   @media (max-width: 480px) {
     // margin-left: 25px;
