@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { projects, techColors } from "@/config";
 
 import { FiGithub, FiExternalLink, FiYoutube } from "react-icons/fi";
-import { useWindowSize } from "@uidotdev/usehooks";
+// import { useWindowSize } from "@uidotdev/usehooks";
 
 const StyledProjectsSection = styled.section`
   .inner {
@@ -28,195 +28,185 @@ const loadTechnologiesColors = (tech) => {
     };
   });
 };
-
-const Projects = () => {
-  const { width } = useWindowSize();
-
-  return (
-    <StyledProjectsSection id='projects'>
-      <h2 className='numbered-heading'>Projects</h2>
-      {width > 1024 ? (
-        <StyledProjectsGrid>
-          {projects &&
-            projects.map(
-              (
-                {
-                  title,
-                  cover_name,
-                  github,
-                  external,
-                  youtube,
-                  tech,
-                  description,
-                },
-                index
-              ) => {
-                const image = loadImage(cover_name);
-                return (
-                  <StyledProject key={index}>
-                    <div className='project-content'>
-                      <div>
-                        <p className='project-overline'>Featured Project</p>
-
-                        <h3 className='project-title'>
-                          <a href={external}>{title}</a>
-                        </h3>
-
-                        <div className='project-description'>
-                          <p>{description}</p>
-                        </div>
-
-                        {tech.length && (
-                          <ul className='project-tech-list'>
-                            {tech.map((tech, i) => (
-                              <li key={i}>{tech}</li>
-                            ))}
-                          </ul>
-                        )}
-
-                        <div className='project-links'>
-                          {github && (
-                            <a
-                              href={github}
-                              aria-label='GitHub Link'
-                              target='_blank'
-                              rel='noreferrer'
-                            >
-                              <FiGithub />
-                            </a>
-                          )}
-                          {external && (
-                            <a
-                              href={external}
-                              aria-label='External Link'
-                              className='external'
-                              target='_blank'
-                              rel='noreferrer'
-                            >
-                              <FiExternalLink />
-                            </a>
-                          )}
-                          {youtube && (
-                            <a
-                              href={youtube}
-                              aria-label='youtube Link'
-                              className='external'
-                              target='_blank'
-                              rel='noreferrer'
-                            >
-                              <FiYoutube />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className='project-image'>
+const NormalProjectsCardsDisplay = () => (
+  <StyledProjectsFlex>
+    {projects &&
+      projects.map(
+        (
+          { title, cover_name, github, external, youtube, tech, description },
+          index
+        ) => {
+          const image = loadImage(cover_name);
+          const newTech = loadTechnologiesColors(tech);
+          return (
+            <div className='project-card-wrapper' key={index}>
+              <StyledProjectCard>
+                <div
+                  className='project-card__image'
+                  // style={{ backgroundImage: `url(${image})` }}
+                >
+                  <img src={image} alt={title} draggable='false' />
+                </div>
+                <div className='project-card__content'>
+                  <p className='card-content__title'>{title}</p>
+                  <p className='card-content__description'>{description}</p>
+                  <div className='card-content__technologies'>
+                    {newTech.length && (
+                      <ul className='technologies-list'>
+                        {newTech.map(({ name, color }, i) => (
+                          <li
+                            key={i}
+                            style={{
+                              color: `${color}`,
+                              border: `1px solid ${color}`,
+                            }}
+                          >
+                            {name}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  <StyledProjectLinks>
+                    {github && (
                       <a
-                        href={external ? external : github ? github : "#"}
+                        href={github}
+                        aria-label='GitHub Link'
                         target='_blank'
                         rel='noreferrer'
                       >
-                        <img src={image} alt={title} className='img' />
+                        <FiGithub />
                       </a>
-                    </div>
-                  </StyledProject>
-                );
-              }
-            )}
-        </StyledProjectsGrid>
-      ) : (
-        <StyledProjectsFlex>
-          {projects &&
-            projects.map(
-              (
-                {
-                  title,
-                  cover_name,
-                  github,
-                  external,
-                  youtube,
-                  tech,
-                  description,
-                },
-                index
-              ) => {
-                const image = loadImage(cover_name);
-                const newTech = loadTechnologiesColors(tech);
-                console.log(newTech);
-                return (
-                  <div className='project-card-wrapper'>
-                    <StyledProjectCard key={index}>
-                      <div
-                        className='project-card__image'
-                        // style={{ backgroundImage: `url(${image})` }}
+                    )}
+                    {external && (
+                      <a
+                        href={external}
+                        aria-label='External Link'
+                        className='external'
+                        target='_blank'
+                        rel='noreferrer'
                       >
-                        <img src={image} alt={title} />
-                      </div>
-                      <div className='project-card__content'>
-                        <p className='card-content__title'>{title}</p>
-                        <p className='card-content__description'>
-                          {description}
-                        </p>
-                        <div className='card-content__technologies'>
-                          {newTech.length && (
-                            <ul className='technologies-list'>
-                              {newTech.map(({ name, color }, i) => (
-                                <li
-                                  key={i}
-                                  style={{
-                                    color: `${color}`,
-                                    border: `1px solid ${color}`,
-                                  }}
-                                >
-                                  {name}
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                        <StyledProjectLinks>
-                          {github && (
-                            <a
-                              href={github}
-                              aria-label='GitHub Link'
-                              target='_blank'
-                              rel='noreferrer'
-                            >
-                              <FiGithub />
-                            </a>
-                          )}
-                          {external && (
-                            <a
-                              href={external}
-                              aria-label='External Link'
-                              className='external'
-                              target='_blank'
-                              rel='noreferrer'
-                            >
-                              <FiExternalLink />
-                            </a>
-                          )}
-                          {youtube && (
-                            <a
-                              href={youtube}
-                              aria-label='youtube Link'
-                              className='external'
-                              target='_blank'
-                              rel='noreferrer'
-                            >
-                              <FiYoutube />
-                            </a>
-                          )}
-                        </StyledProjectLinks>
-                      </div>
-                    </StyledProjectCard>
-                  </div>
-                );
-              }
-            )}
-        </StyledProjectsFlex>
+                        <FiExternalLink />
+                      </a>
+                    )}
+                    {youtube && (
+                      <a
+                        href={youtube}
+                        aria-label='youtube Link'
+                        className='external'
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        <FiYoutube />
+                      </a>
+                    )}
+                  </StyledProjectLinks>
+                </div>
+              </StyledProjectCard>
+            </div>
+          );
+        }
       )}
+  </StyledProjectsFlex>
+);
+
+const GridProjectsCardsDisplay = () => {
+  // not responsive
+  return (
+    <StyledProjectsGrid>
+      {projects &&
+        projects.map(
+          (
+            { title, cover_name, github, external, youtube, tech, description },
+            index
+          ) => {
+            const image = loadImage(cover_name);
+            return (
+              <StyledProject key={index}>
+                <div className='project-content'>
+                  <div>
+                    <p className='project-overline'>Featured Project</p>
+
+                    <h3 className='project-title'>
+                      <a href={external}>{title}</a>
+                    </h3>
+
+                    <div className='project-description'>
+                      <p>{description}</p>
+                    </div>
+
+                    {tech.length && (
+                      <ul className='project-tech-list'>
+                        {tech.map((tech, i) => (
+                          <li key={i}>{tech}</li>
+                        ))}
+                      </ul>
+                    )}
+
+                    <div className='project-links'>
+                      {github && (
+                        <a
+                          href={github}
+                          aria-label='GitHub Link'
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          <FiGithub />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href={external}
+                          aria-label='External Link'
+                          className='external'
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          <FiExternalLink />
+                        </a>
+                      )}
+                      {youtube && (
+                        <a
+                          href={youtube}
+                          aria-label='youtube Link'
+                          className='external'
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          <FiYoutube />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <div className='project-image'>
+                  <a
+                    href={external ? external : github ? github : "#"}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <img
+                      src={image}
+                      alt={title}
+                      className='img'
+                      draggable='false'
+                    />
+                  </a>
+                </div>
+              </StyledProject>
+            );
+          }
+        )}
+    </StyledProjectsGrid>
+  );
+};
+
+const Projects = () => {
+  return (
+    <StyledProjectsSection id='projects'>
+      <h2 className='numbered-heading'>Projects</h2>
+      <NormalProjectsCardsDisplay />
     </StyledProjectsSection>
   );
 };
