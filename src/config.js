@@ -236,6 +236,22 @@ const projects = [
   },
 ];
 
+const techColors = {
+  React: "#61DAFB",
+  "Node.js": "#339933",
+  Express: "#000000",
+  MySQL: "#4479A1",
+  Ethers: "#645DD7",
+  MetaMask: "#E2761B",
+  "React-Context-API": "#7f9e77",
+  Redux: "#764ABC",
+  MongoDB: "#47A248",
+  JavaScript: "#d3c23c",
+  Solidity: "#363636",
+  Java: "#007396",
+  PostgreSQL: "#336791",
+};
+
 const connectSection = {
   openToWork: true,
   openToWorkMessage:
@@ -252,4 +268,5 @@ export {
   education,
   connectSection,
   projects,
+  techColors,
 };
