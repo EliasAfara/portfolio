@@ -91,20 +91,29 @@ const three = <h3 className='medium-heading'>I build things for the web.</h3>;
 const four = (
   <>
     <p>
-      I'm a software engineer specializing in building (and occasionally
-      designing) exceptional digital experiences. Currently, I'm focused on
-      building accessible, human-centered products at .
+      I am a junior software engineer poised to make a significant impact in the
+      field of web development. Armed with a strong technical foundation, a
+      genuine passion for continuous growth, and a proven track record of
+      delivering exceptional results, I confidently present a unique combination
+      of skills, adaptability, and meticulous attention to detail.
     </p>
   </>
 );
 
 const five = (
+  <p>
+    These qualities position me as a standout candidate, ready to excel in web
+    development opportunities and contribute to transformative projects.
+  </p>
+);
+
+const six = (
   <a className='learn-more-link' href='/#about'>
     Learn More!
   </a>
 );
 
-const items = [one, two, four, five];
+const items = [one, two, four, five, six];
 
 const Home = () => {
   return (
