@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import EliasAfara from "@/assets/EliasAfara.jpeg";
+import EliasAfara from "@/assets/EliasAfara-transparent.png";
 
 const StyledTextDiv = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -62,11 +62,12 @@ const StyledImgDiv = styled.div`
   background-position: center;
   background-size: cover;
   /* filter: grayscale(.5); */
-  box-shadow: inset 0 0 0 9px rgb(225 225 225 / 30%);
+  box-shadow: inset 0 0 0 5px rgb(225 225 225 / 30%);
   order: 1;
   justify-self: center;
   width: 300px;
   height: 300px;
+  border: 2px solid var(--chinese-black);
   animation: ${profileAnimation} 6s ease-in-out infinite;
 
   // mix-blend-mode: multiply;
