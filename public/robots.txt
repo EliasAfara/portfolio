@@ -1,5 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://eliasafara.fr/sitemap.xml
-Sitemap: https://www.eliasafara.fr/sitemap.xml
