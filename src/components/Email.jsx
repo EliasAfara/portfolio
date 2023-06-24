@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { contactInfo } from "../config";
+import { contactInfo } from "../data";
 import Side from "./Side";
 
 const StyledLinkWrapper = styled.div`

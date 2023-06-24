@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { workExperience } from "@/config";
+import { workExperience } from "@/data";
 
 const Experience = () => {
   const [activeTabId, setActiveTabId] = useState(0);

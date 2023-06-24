@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { projects, techColors } from "@/config";
+import { projects, techColors } from "@/data";
 
 import { FiGithub, FiExternalLink, FiYoutube } from "react-icons/fi";
 // import { useWindowSize } from "@uidotdev/usehooks";

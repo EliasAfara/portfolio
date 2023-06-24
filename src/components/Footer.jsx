@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import DynamicIcon from "./DynamicIcon";
-import { socialMedia } from "../config";
+import { socialMedia } from "../data";
 import { getRepoStarsAndForks } from "../utils/getRepoStarsAndForks";
 
 import { FaRegStar } from "react-icons/fa";

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { contactInfo, connectSection } from "@/config";
+import { contactInfo, connectSection } from "@/data";
 
 const StyledContactSection = styled.section`
   max-width: 600px;

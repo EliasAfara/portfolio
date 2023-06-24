@@ -1,6 +1,6 @@
 import React from "react";
 import { HiOutlineCalendar } from "react-icons/hi";
-import { education } from "../../config";
+import { education } from "../../data";
 import styled from "styled-components";
 
 const StyledRounder = styled.span`

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { socialMedia } from "../config";
+import { socialMedia } from "../data";
 import Side from "./Side";
 import DynamicIcon from "./DynamicIcon";
 
