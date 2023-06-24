@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <header className='header'>
       <nav className='nav'>
-        <Link href='/' className='nav__logo'>
+        <Link to='/' className='nav__logo'>
           <span className='grey-color'> &lt;</span>
           <span className='logo-name'>Elias</span>
           <span className='grey-color'>/&gt;</span>
