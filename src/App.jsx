@@ -14,6 +14,7 @@ import Contact from "./components/sections/Contact";
 import Email from "./components/Email";
 import Socials from "./components/Socials";
 import Footer from "./components/Footer";
+import Plum from "./components/Plum";
 
 // pages
 import PageNotFound from "./pages/PageNotFound";
@@ -51,6 +52,7 @@ const Layout = () => {
       <Outlet />
 
       <Footer />
+      <Plum />
       {/* <ScrollUp /> */}
     </>
   );
