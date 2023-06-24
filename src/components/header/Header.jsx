@@ -4,6 +4,7 @@ import { navLinks } from "@/config";
 import DynamicIcon from "../DynamicIcon";
 import { HiX, HiOutlineMenu } from "react-icons/hi";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import Resume from "@/assets/Resume_EliasAfara_2023_EN.pdf";
 
 const ResumeLink = styled.a`
@@ -34,11 +35,11 @@ const Header = () => {
   return (
     <header className='header'>
       <nav className='nav'>
-        <a href='/' className='nav__logo'>
+        <Link href='/' className='nav__logo'>
           <span className='grey-color'> &lt;</span>
           <span className='logo-name'>Elias</span>
           <span className='grey-color'>/&gt;</span>
-        </a>
+        </Link>
 
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className='nav__list grid'>
