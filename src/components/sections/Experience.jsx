@@ -179,10 +179,10 @@ const StyledTabButton = styled.button`
   width: 100%;
   height: var(--tab-height);
   padding: 0 20px 2px;
-  border-left: 2px solid var(--lightest-navy);
+  border-left: 2px solid var(--chinese-black);
   background-color: transparent;
   color: ${({ isactivetab }) =>
-    isactivetab ? "var(--green)" : "var(--slate)"};
+    isactivetab ? "var(--moonstone-blue)" : "var(--slate)"};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
@@ -197,7 +197,7 @@ const StyledTabButton = styled.button`
     min-width: 180px;
     padding: 0 15px;
     border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
+    border-bottom: 2px solid var(--chinese-black);
     text-align: center;
   }
 
@@ -208,7 +208,7 @@ const StyledTabButton = styled.button`
 
   &:hover,
   &:focus {
-    background-color: var(--light-navy);
+    background-color: #e2f2f4;
   }
 `;
 
@@ -220,7 +220,7 @@ const StyledHighlight = styled.div`
   width: 2px;
   height: var(--tab-height);
   border-radius: var(--border-radius);
-  background: var(--green);
+  background: var(--moonstone-blue);
   transform: translateY(
     calc(${({ activetabid }) => activetabid} * var(--tab-height))
   );
@@ -273,7 +273,7 @@ const StyledTabPanel = styled.div`
     line-height: 1.3;
 
     .company {
-      color: var(--green);
+      color: var(--moonstone-blue);
     }
   }
 

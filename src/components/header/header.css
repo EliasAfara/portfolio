@@ -76,7 +76,7 @@
 /* ACTIVE LINK */
 .active-link,
 .nav__link:hover {
-    color: var(--title-color-dark);
+    color: var(--moonstone-blue);
 }
 
 /* CHANGE HEADER */
@@ -150,7 +150,7 @@
     }
 
     .nav__close:hover {
-        color: var(--title-color-dark);
+        color: var(--moonstone-blue);
     }
 
     .nav__toggle {

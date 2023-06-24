@@ -45,7 +45,7 @@ const StyledText = styled.div`
         content: "▹";
         position: absolute;
         left: 0;
-        color: var(--green);
+        color: var(--moonstone-blue);
         font-size: var(--fz-sm);
         line-height: 12px;
       }

@@ -397,7 +397,7 @@ const StyledProject = styled.li`
 
   .project-overline {
     margin: 10px 0;
-    color: var(--green);
+    color: var(--moonstone-blue);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
     font-weight: 400;
@@ -476,7 +476,7 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      //   background-color: var(--green);
+      //   background-color: var(--moonstone-blue);
       border-radius: var(--border-radius);
       vertical-align: middle;
 

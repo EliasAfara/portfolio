@@ -6,19 +6,18 @@ const variables = css`
 
     /*========== Colors ==========*/
     /*Color mode HSL(hue, saturation, lightness)*/
-    --hue: 0;
-    --sat: 0%;
-    --title-color: hsl(var(--hue), var(--sat), 20%);
-    /* --title-color-dark: hsl(var(--hue), var(--sat), 0%); */
-    /* --title-color-dark: hsl(206, 68%, 33%); */
+    --title-color: hsl(0, 0%, 20%);
     --title-color-dark: #3badd4;
-    --text-color: hsl(var(--hue), var(--sat), 46%);
-    --body-color: hsl(var(--hue), var(--sat), 98%);
+    --text-color: #5a6061;
+    --body-color: hsl(0, 0%, 98%);
     --container-color: #fff;
 
     --lotion: #fafafa;
     --sonic-silver: #757575;
     --dark-charcoal: #333333;
+
+    --moonstone-blue: #71bfc8;
+    --chinese-black: #161818;
 
     --maximum-blue: #3badd4;
 
@@ -74,16 +73,15 @@ const variables = css`
 
     /*========== Brittany Chiang Variables ==========*/
     --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
+    // --navy: #0a192f;
+    // --light-navy: #112240;
+    // --lightest-navy: #233554;
     --navy-shadow: rgba(2, 12, 27, 0.7);
     --dark-slate: #495670;
     --slate: #8892b0;
     --light-slate: #a8b2d1;
     --lightest-slate: #ccd6f6;
     --white: #e6f1ff;
-    --green: #64ffda;
     --green-tint: rgba(100, 255, 218, 0.1);
     --pink: #f57dff;
     --blue: #57cbff;

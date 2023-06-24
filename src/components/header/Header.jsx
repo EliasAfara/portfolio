@@ -10,6 +10,10 @@ const ResumeLink = styled.a`
   ${({ theme }) => theme.mixins.smallButton};
   margin-left: 15px;
   font-size: var(--fz-xs);
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 
 const Header = () => {

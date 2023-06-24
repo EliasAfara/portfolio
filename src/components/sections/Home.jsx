@@ -24,7 +24,7 @@ const StyledHeroSection = styled.section`
 
   h1 {
     margin: 0 0 30px 4px;
-    color: var(--maximum-blue);
+    color: var(--moonstone-blue);
     // font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
@@ -41,7 +41,6 @@ const StyledHeroSection = styled.section`
   }
 
   p {
-    margin: 20px 0 0;
     max-width: 540px;
   }
 
@@ -89,19 +88,17 @@ const one = <h1>Hi, my name is</h1>;
 const two = <h2 className='big-heading'>Elias Afara.</h2>;
 const three = <h3 className='medium-heading'>I build things for the web.</h3>;
 const four = (
-  <>
-    <p>
-      I am a junior software engineer poised to make a significant impact in the
-      field of web development. Armed with a strong technical foundation, a
-      genuine passion for continuous growth, and a proven track record of
-      delivering exceptional results, I confidently present a unique combination
-      of skills, adaptability, and meticulous attention to detail.
-    </p>
-  </>
+  <p style={{ marginTop: "15px" }}>
+    I am a junior software engineer poised to make a significant impact in the
+    field of web development. Armed with a strong technical foundation, a
+    genuine passion for continuous growth, and a proven track record of
+    delivering exceptional results, I confidently present a unique combination
+    of skills, adaptability, and meticulous attention to detail.
+  </p>
 );
 
 const five = (
-  <p>
+  <p style={{ marginTop: "15px" }}>
     These qualities position me as a standout candidate, ready to excel in web
     development opportunities and contribute to transformative projects.
   </p>

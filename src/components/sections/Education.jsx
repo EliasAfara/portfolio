@@ -7,14 +7,14 @@ const StyledRounder = styled.span`
   display: inline-block;
   width: 13px;
   height: 13px;
-  background-color: var(--text-color);
+  background-color: #71797a;
   border-radius: 50%;
 `;
 const StyledLine = styled.span`
   display: block;
   width: 1px;
   height: 100%;
-  background-color: var(--text-color);
+  background-color: #71797a;
   transform: translate(6px, -7px);
 `;
 

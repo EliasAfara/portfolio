@@ -28,13 +28,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   // ::selection {
-  //   background-color: var(--lightest-navy);
+  //   background-color: var(--chinese-black);
   //   color: var(--lightest-slate);
   // }
 
   /* Provide basic, default focus styles.*/
   :focus {
-    outline: 2px dashed var(--green);
+    outline: 2px dashed var(--moonstone-blue);
     outline-offset: 3px;
   }
 
@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
     focus.
   */
   :focus-visible {
-    outline: 2px dashed var(--green);
+    outline: 2px dashed var(--moonstone-blue);
     outline-offset: 3px;
   }
 
@@ -182,7 +182,7 @@ const GlobalStyle = createGlobalStyle`
       width: 0px;
       height: 1px;
       margin-right: 20px;
-      background-color: var(--lightest-navy);
+      background-color: var(--chinese-black);
 
       @media (max-width: 1080px) {
         width: 300px;
@@ -204,7 +204,7 @@ const GlobalStyle = createGlobalStyle`
       width: 400px;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--lightest-navy);
+      background-color: var(--chinese-black);
 
       @media (max-width: 1080px) {
         width: 300px;
@@ -233,7 +233,7 @@ const GlobalStyle = createGlobalStyle`
     //   counter-increment: section;
     //   content: '0' counter(section) '.';
     //   margin-right: 10px;
-    //   color: var(--green);
+    //   color: var(--moonstone-blue);
     //   font-family: var(--font-mono);
     //   font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
     //   font-weight: 400;
@@ -252,7 +252,7 @@ const GlobalStyle = createGlobalStyle`
       width: 400px;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--lightest-navy);
+      background-color: var(--chinese-black);
 
       @media (max-width: 1080px) {
         width: 300px;
@@ -283,7 +283,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: var(--green);
+      color: var(--moonstone-blue);
     }
 
     &.inline-link {
@@ -333,28 +333,9 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  // ul {
-  //   &.fancy-list {
-  //     padding: 0;
-  //     margin: 0;
-  //     list-style: none;
-  //     font-size: var(--fz-lg);
-  //     li {
-  //       position: relative;
-  //       padding-left: 30px;
-  //       margin-bottom: 10px;
-  //       &:before {
-  //         content: '▹';
-  //         position: absolute;
-  //         left: 0;
-  //         color: var(--green);
-  //       }
-  //     }
-  //   }
-  // }
 
   hr {
-    background-color: var(--lightest-navy);
+    background-color: var(--chinese-black);
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -370,18 +351,18 @@ const GlobalStyle = createGlobalStyle`
 
 
   #logo {
-    color: var(--green);
+    color: var(--moonstone-blue);
   }
 
   .overline {
-    color: var(--green);
+    color: var(--moonstone-blue);
     font-family: var(--font-mono);
     font-size: var(--fz-md);
     font-weight: 400;
   }
 
   .subtitle {
-    color: var(--green);
+    color: var(--moonstone-blue);
     margin: 0 0 20px 0;
     font-size: var(--fz-md);
     font-family: var(--font-mono);
@@ -404,7 +385,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: var(--green);
+    color: var(--moonstone-blue);
 
     .arrow {
       display: block;
