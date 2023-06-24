@@ -122,6 +122,7 @@ const About = () => {
                 <circle
                   fill='none'
                   stroke='#c6e5e9'
+                  strokeOpacity='0.8'
                   strokeWidth='75'
                   cx='167.6'
                   cy='167.6'
