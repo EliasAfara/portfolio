@@ -64,7 +64,7 @@ const Header = () => {
         </Link>
 
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
-          <ul className='nav__list grid'>
+          <ul className='nav__list'>
             {navLinks.map(({ id, name, url, icon, routerLink }, index) => {
               return (
                 <li className='nav__item' key={index}>
