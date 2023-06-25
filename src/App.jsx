@@ -18,6 +18,7 @@ import Plum from "./components/Plum";
 
 // pages
 import PageNotFound from "./pages/PageNotFound";
+import GuestBook from "./pages/GuestBook";
 
 // import ScrollUp from "./components/scrollup/ScrollUp";
 
@@ -27,7 +28,7 @@ import { Routes, Route, Outlet } from "react-router-dom";
 
 const MainRoute = () => {
   return (
-    <StyledMainContainer className='fillHeight'>
+    <>
       <Home />
       <About />
       <Education />
@@ -35,7 +36,7 @@ const MainRoute = () => {
       <Skills />
       <Projects />
       <Contact />
-    </StyledMainContainer>
+    </>
   );
 };
 
@@ -49,7 +50,10 @@ const Layout = () => {
       <Email />
 
       {/* An <Outlet> renders whatever child route is currently active */}
-      <Outlet />
+
+      <main className='fillHeight'>
+        <Outlet />
+      </main>
 
       <Footer />
       <Plum />
@@ -67,6 +71,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<MainRoute />} />
+            <Route path='/guestbook' element={<GuestBook />} />
 
             <Route path='*' element={<PageNotFound />} />
           </Route>
@@ -75,9 +80,5 @@ function App() {
     </>
   );
 }
-
-const StyledMainContainer = styled.main`
-  counter-reset: section;
-`;
 
 export default App;
