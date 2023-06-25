@@ -26,7 +26,7 @@ const Experience = () => {
 
   return (
     <StyledJobsSection id='experience'>
-      <h2 className='numbered-heading'>Where I've Worked</h2>
+      <h2 className='left-aligned-heading'>Where I've Worked</h2>
       <div className='inner'>
         <StyledTabList
           role='tablist'

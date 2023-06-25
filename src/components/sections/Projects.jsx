@@ -205,7 +205,7 @@ const GridProjectsCardsDisplay = () => {
 const Projects = () => {
   return (
     <StyledProjectsSection id='projects'>
-      <h2 className='numbered-heading'>Projects</h2>
+      <h2 className='left-aligned-heading'>Projects</h2>
       <NormalProjectsCardsDisplay />
     </StyledProjectsSection>
   );

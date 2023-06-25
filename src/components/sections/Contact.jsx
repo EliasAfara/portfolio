@@ -42,7 +42,7 @@ const StyledContactSection = styled.section`
 const Contact = () => {
   return (
     <StyledContactSection id='contact'>
-      <h2 className='numbered-heading overline'>What's Next?</h2>
+      <h2 className='left-aligned-heading overline'>What's Next?</h2>
       <h2 className='title'>Get In Touch</h2>
 
       {connectSection && connectSection.openToWork

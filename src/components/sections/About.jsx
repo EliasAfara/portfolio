@@ -85,7 +85,7 @@ const About = () => {
   ];
   return (
     <StyledAboutSection id='about'>
-      <h2 className='numbered-heading'>About Me</h2>
+      <h2 className='left-aligned-heading'>About Me</h2>
       <div className='inner'>
         <div
           style={{

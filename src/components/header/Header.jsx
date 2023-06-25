@@ -4,7 +4,7 @@ import { navLinks } from "@/data";
 import DynamicIcon from "../DynamicIcon";
 import { HiX, HiOutlineMenu } from "react-icons/hi";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Resume from "@/assets/Resume_EliasAfara_2023_EN.pdf";
 
 const ResumeLink = styled.a`
@@ -32,6 +32,28 @@ const Header = () => {
     showMenu(false);
   };
 
+  const NavigationLink = ({ id, url, routerLink, children }) => (
+    <>
+      {routerLink ? (
+        <NavLink
+          to={url}
+          onClick={() => handleNavItemClick(`${id}`)}
+          className={activeNav === id ? "nav__link active-link" : "nav__link"}
+        >
+          {children}
+        </NavLink>
+      ) : (
+        <a
+          href={url}
+          onClick={() => handleNavItemClick(`${id}`)}
+          className={activeNav === id ? "nav__link active-link" : "nav__link"}
+        >
+          {children}
+        </a>
+      )}
+    </>
+  );
+
   return (
     <header className='header'>
       <nav className='nav'>
@@ -43,19 +65,13 @@ const Header = () => {
 
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className='nav__list grid'>
-            {navLinks.map(({ id, name, url, icon }, index) => {
+            {navLinks.map(({ id, name, url, icon, routerLink }, index) => {
               return (
                 <li className='nav__item' key={index}>
-                  <a
-                    href={url}
-                    onClick={() => handleNavItemClick(`${id}`)}
-                    className={
-                      activeNav === id ? "nav__link active-link" : "nav__link"
-                    }
-                  >
+                  <NavigationLink id={id} url={url} routerLink={routerLink}>
                     <DynamicIcon name={icon} className={"nav__icon"} />
                     {name}
-                  </a>
+                  </NavigationLink>
                 </li>
               );
             })}

@@ -82,37 +82,49 @@ const navLinks = [
     name: "About",
     url: "/#about",
     icon: "HiOutlineUser",
+    routerLink: false,
   },
   {
     id: "#education",
     name: "Education",
     url: "/#education",
     icon: "HiOutlineAcademicCap",
+    routerLink: false,
   },
   {
     id: "#experience",
     name: "Experience",
     url: "/#experience",
     icon: "HiOutlineBriefcase",
+    routerLink: false,
   },
   {
     id: "#skills",
     name: "Skills",
     url: "/#skills",
     icon: "HiOutlineBadgeCheck",
+    routerLink: false,
   },
   {
     id: "#projects",
     name: "Projects",
     url: "/#projects",
     icon: "HiOutlinePhotograph",
+    routerLink: false,
   },
-
   {
     id: "#contact",
     name: "Contact",
     url: "/#contact",
     icon: "HiOutlineMail",
+    routerLink: false,
+  },
+  {
+    id: "#guestbook",
+    name: "GuestBook",
+    url: "/guestbook",
+    icon: "HiOutlineChatAlt2",
+    routerLink: true,
   },
 ];
 
