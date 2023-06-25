@@ -21,8 +21,8 @@ import PageNotFound from "./pages/PageNotFound";
 import GuestBook from "./pages/GuestBook";
 
 // import ScrollUp from "./components/scrollup/ScrollUp";
-
-import styled, { ThemeProvider } from "styled-components";
+import ScrollToTop from "./utils/scrollToTop";
+import { ThemeProvider } from "styled-components";
 import { GlobalStyle, theme } from "@/styles";
 import { Routes, Route, Outlet } from "react-router-dom";
 
@@ -67,6 +67,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        <ScrollToTop />
 
         <Routes>
           <Route path='/' element={<Layout />}>
