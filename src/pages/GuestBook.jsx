@@ -49,7 +49,7 @@ const GuestBook = () => {
 
   return (
     <StyledContainer>
-      <h2 className='in-between-heading'>GuestBook</h2>
+      <h2 className='in-between-heading'>Guestbook</h2>
       <div className='inner'>
         <Giscus
           id='comments'

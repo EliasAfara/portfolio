@@ -121,7 +121,7 @@ const navLinks = [
   },
   {
     id: "#guestbook",
-    name: "GuestBook",
+    name: "Guestbook",
     url: "/guestbook",
     icon: "HiOutlineChatAlt2",
     routerLink: true,
