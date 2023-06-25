@@ -67,12 +67,19 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <ScrollToTop />
 
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<MainRoute />} />
-            <Route path='/guestbook' element={<GuestBook />} />
+            <Route
+              path='/guestbook'
+              element={
+                <>
+                  <ScrollToTop />
+                  <GuestBook />
+                </>
+              }
+            />
 
             <Route path='*' element={<PageNotFound />} />
           </Route>
