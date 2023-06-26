@@ -122,7 +122,7 @@ const Footer = () => {
 
       <StyledCredit tabIndex='-1'>
         <a
-          href='https://github.com/EliasAfara'
+          href='https://github.com/EliasAfara/portfolio'
           aria-label='Designed and built by Elias Afara'
           target='_blank'
           rel='noreferrer'
