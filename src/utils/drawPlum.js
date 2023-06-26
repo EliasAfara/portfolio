@@ -1,12 +1,15 @@
+// Constants
 const r180 = Math.PI;
 const r90 = Math.PI / 2;
 const r15 = Math.PI / 12;
 const color = "#7d7d5e";
 const { random } = Math;
 
+// Initialize Canvas
 const initCanvas = (canvas, width = 400, height = 400, _dpi) => {
   const ctx = canvas.getContext("2d");
 
+  // Determine device pixel ratio
   const dpr = window.devicePixelRatio || 1;
   const bsr =
     ctx.webkitBackingStorePixelRatio ||
@@ -16,8 +19,10 @@ const initCanvas = (canvas, width = 400, height = 400, _dpi) => {
     ctx.backingStorePixelRatio ||
     1;
 
+  // Calculate dots per inch (dpi)
   const dpi = _dpi || dpr / bsr;
 
+  // Set canvas dimensions and scale context
   canvas.style.width = `${width}px`;
   canvas.style.height = `${height}px`;
   canvas.width = width * dpi;
@@ -27,12 +32,14 @@ const initCanvas = (canvas, width = 400, height = 400, _dpi) => {
   return { ctx, dpi };
 };
 
+// Convert Polar to Cartesian Coordinates
 const polar2cart = (x = 0, y = 0, r = 0, theta = 0) => {
   const dx = r * Math.cos(theta);
   const dy = r * Math.sin(theta);
   return [x + dx, y + dy];
 };
 
+// Animation Control for Frames
 const framesAnimationControl = (frame, isActive) => {
   let previousFrameTimestamp = 0;
   let rafId = null;
@@ -73,13 +80,16 @@ const drawPlum = (
   stopped,
   isActive
 ) => {
+  // Get the canvas and context
   const canvas = canvasRef.current;
   const { ctx } = initCanvas(canvas, size.width, size.height);
   const { width, height } = canvas;
 
+  // Initialize steps and prevSteps
   let steps;
   let prevSteps;
 
+  // Recursive Step Function
   const step = (x, y, rad, counter = { value: 0 }) => {
     const length = random() * len.current;
     counter.value += 1;
@@ -94,7 +104,7 @@ const drawPlum = (
     const rad1 = rad + random() * r15;
     const rad2 = rad - random() * r15;
 
-    // out of bounds
+    // Check if point is out of bounds
     if (
       nx < -100 ||
       nx > size.width + 100 ||
@@ -105,10 +115,10 @@ const drawPlum = (
 
     const rate = counter.value <= MIN_BRANCH ? 0.8 : 0.5;
 
-    // left branch
+    // Add left branch to steps
     if (random() < rate) steps.push(() => step(nx, ny, rad1, counter));
 
-    // right branch
+    // Add right branch to steps
     if (random() < rate) steps.push(() => step(nx, ny, rad2, counter));
   };
 
@@ -135,13 +145,13 @@ const drawPlum = (
     });
   };
 
+  // Control Animation Frames
   let { resume, pause } = framesAnimationControl(frame, isActive);
 
-  /**
-   * 0.2 - 0.8
-   */
+  // Randomly generate middle point between 0.2 and 0.8
   const randomMiddle = () => random() * 0.6 + 0.2;
 
+  // Start the Plum drawing
   start.current = () => {
     pause();
     ctx.clearRect(0, 0, width, height);
