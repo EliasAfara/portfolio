@@ -9,15 +9,18 @@ const StyledContainer = styled.div`
 `;
 
 const StyledTitle = styled.h1`
-  color: var(--moonstone-blue);
+  color: #d4e0e7;
   font-family: var(--font-mono);
   font-size: clamp(100px, 25vw, 200px);
   line-height: 1;
+  text-shadow: -1px -1px 0 #d0d5d8;
 `;
 
 const StyledSubtitle = styled.h2`
-  font-size: clamp(30px, 5vw, 50px);
-  font-weight: 400;
+  color: #dde7ec;
+  font-size: clamp(30px, 5vw, 60px);
+  font-weight: 600;
+  text-shadow: -1px -1px 0 #d0d5d8;
 `;
 
 const StyledHomeButton = styled(Link)`
