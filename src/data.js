@@ -1,3 +1,27 @@
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaVuejs,
+  FaNodeJs,
+  FaGitAlt,
+  FaTerminal,
+  FaDocker,
+  FaJava,
+  FaPython,
+  FaSass,
+} from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiPostman,
+  SiPostgresql,
+  SiExpress,
+  SiMongodb,
+  SiRedux,
+  SiVisualstudiocode,
+} from "react-icons/si";
+
 const contactInfo = {
   email: "afaraelias@gmail.com",
 };
@@ -129,62 +153,25 @@ const navLinks = [
 ];
 
 const skills = [
-  {
-    name: "JavaScript",
-    icon: "",
-  },
-  {
-    name: "TypeScript",
-    icon: "",
-  },
-  {
-    name: "React",
-    icon: "",
-  },
-  {
-    name: "Node.js",
-    icon: "",
-  },
-  {
-    name: "Express.js",
-    icon: "",
-  },
-  {
-    name: "Vue.js",
-    icon: "",
-  },
-  {
-    name: "MongoDB",
-    icon: "",
-  },
-  {
-    name: "JavaScript",
-    icon: "",
-  },
-  {
-    name: "JavaScript",
-    icon: "",
-  },
-  {
-    name: "JavaScript",
-    icon: "",
-  },
-  {
-    name: "JavaScript",
-    icon: "",
-  },
-  {
-    name: "JavaScript",
-    icon: "",
-  },
-  {
-    name: "JavaScript",
-    icon: "",
-  },
-  {
-    name: "JavaScript",
-    icon: "",
-  },
+  { name: "HTML", icon: FaHtml5, color: "#E44D26" },
+  { name: "CSS", icon: FaCss3Alt, color: "#264de4" },
+  { name: "Sass", icon: FaSass, color: "#CC6699" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "TypeScript", icon: SiTypescript, color: "#007ACC" },
+  { name: "React", icon: FaReact, color: "#61DAFB" },
+  { name: "Redux", icon: SiRedux, color: "#764ABC" },
+  { name: "Vue.js", icon: FaVuejs, color: "#4FC08D" },
+  { name: "Node.js", icon: FaNodeJs, color: "#339933" },
+  { name: "Express.js", icon: SiExpress, color: "#000000" },
+  { name: "Java", icon: FaJava, color: "#007396" },
+  { name: "Python", icon: FaPython, color: "#3776AB" },
+  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+  { name: "Git", icon: FaGitAlt, color: "#F05032" },
+  { name: "Bash", icon: FaTerminal, color: "#000000" },
+  { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+  { name: "Docker", icon: FaDocker, color: "#2496ED" },
+  { name: "VSCode", icon: SiVisualstudiocode, color: "#007ACC" },
 ];
 
 const projects = [
@@ -280,5 +267,6 @@ export {
   education,
   connectSection,
   projects,
+  skills,
   techColors,
 };

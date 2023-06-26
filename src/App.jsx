@@ -58,7 +58,6 @@ const Layout = () => {
       <Footer />
       <Plum />
       <Plum />
-      <Plum />
       {/* <ScrollUp /> */}
     </>
   );
