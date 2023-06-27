@@ -9,11 +9,17 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    review:
-      require-code-owner-reviews: true
-      approved-reviews-required: 1
+      time: "09:00"
+      timezone: "Europe/Paris"
+    commit-message:
+      # Include a list of updated dependencies
+      # with a prefix determined by the dependency group
+      prefix: "npm prod"
+      prefix-development: "npm dev"
+      include: "scope"
     labels:
-      - "dependencies"
-      - "automated"
+      - "npm dependencies"
     assignees:
-      - "@EliasAfara"
+      - "EliasAfara"
+    reviewers:
+      - "EliasAfara"
