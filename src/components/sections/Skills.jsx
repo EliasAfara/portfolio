@@ -31,6 +31,7 @@ const StyledSkillsSection = styled.section`
       width: 100%;
 
       & > span {
+        width: 46px;
         margin: 12px calc(1.5 * 12px);
       }
     }
@@ -46,6 +47,7 @@ const Skills = () => {
           {skills &&
             skills.map((skill, index) => (
               <Tooltip
+                key={index}
                 placement='top'
                 title={skill.name}
                 arrow={{
