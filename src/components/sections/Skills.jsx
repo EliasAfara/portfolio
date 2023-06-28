@@ -11,7 +11,6 @@ const StyledSkillsSection = styled.section`
     max-width: 600px;
     height: 100%;
     margin: 100px auto -100px auto;
-    background-color: bisque;
 
     @media (max-width: 768px) {
       margin-top: 80px;
@@ -27,6 +26,7 @@ const StyledSkillsSection = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: row;
       flex-wrap: wrap;
       width: 100%;
 
