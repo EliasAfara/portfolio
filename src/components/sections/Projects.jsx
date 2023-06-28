@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { projects, techColors } from "@/data";
 
 import { FiGithub, FiExternalLink, FiYoutube } from "react-icons/fi";
-// import { useWindowSize } from "@uidotdev/usehooks";
+import hexToRgbA from "@/utils/hexToRgbA";
 
 const StyledProjectsSection = styled.section`
   .inner {
@@ -28,6 +28,7 @@ const loadTechnologiesColors = (tech) => {
     };
   });
 };
+
 const NormalProjectsCardsDisplay = () => (
   <StyledProjectsFlex>
     {projects &&
@@ -41,10 +42,7 @@ const NormalProjectsCardsDisplay = () => (
           return (
             <div className='project-card-wrapper' key={index}>
               <StyledProjectCard>
-                <div
-                  className='project-card__image'
-                  // style={{ backgroundImage: `url(${image})` }}
-                >
+                <div className='project-card__image'>
                   <img src={image} alt={title} draggable='false' />
                 </div>
                 <div className='project-card__content'>
@@ -57,11 +55,18 @@ const NormalProjectsCardsDisplay = () => (
                           <li
                             key={i}
                             style={{
-                              color: `${color}`,
-                              border: `1px solid ${color}`,
+                              background: `${hexToRgbA(color, 0.1)}`,
+                              border: `1px dashed ${color}`,
                             }}
                           >
-                            {name}
+                            <span
+                              style={{
+                                color: `${color}`,
+                                filter: "brightness(85%)",
+                              }}
+                            >
+                              {name}
+                            </span>
                           </li>
                         ))}
                       </ul>
