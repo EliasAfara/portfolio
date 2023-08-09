@@ -12,23 +12,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@giscus/react": "^2.2.8",
+    "@giscus/react": "^2.3.0",
     "@uidotdev/usehooks": "^2.0.1",
-    "antd": "^5.6.3",
+    "antd": "^5.8.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "react-router-dom": "^6.14.0",
-    "styled-components": "^6.0.0-rc.3"
+    "react-router-dom": "^6.14.1",
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react-swc": "^3.0.0",
-    "eslint": "^8.43.0",
+    "eslint": "^8.46.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
-    "vite": "^4.3.9"
+    "vite": "^4.4.2"
   }
 }
