@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import "./header.css";
-import { navLinks } from "@/data";
-import DynamicIcon from "../DynamicIcon";
+import React, { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { HiX, HiOutlineMenu } from "react-icons/hi";
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import DynamicIcon from "../DynamicIcon";
+import { navLinks } from "@/data";
 import Resume from "@/assets/Resume_EliasAfara_2023_EN.pdf";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
+import "./header.css";
 
 const ResumeLink = styled.a`
   ${({ theme }) => theme.mixins.smallButton};
@@ -17,42 +19,79 @@ const ResumeLink = styled.a`
   }
 `;
 
-const Header = () => {
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector(".header");
-    if (this.scrollY >= 80) header.classList.add("scroll-header");
-    else header.classList.remove("scroll-header");
-  });
+const NavigationLink = ({
+  id,
+  url,
+  routerLink,
+  children,
+  activeNav,
+  handleNavItemClick,
+  isHomePage,
+}) => {
+  const commonProps = {
+    onClick: () => handleNavItemClick(id),
+    className: activeNav === id ? "nav__link active-link" : "nav__link",
+  };
 
-  const [Toggle, showMenu] = useState(false);
+  if (routerLink) {
+    return (
+      <Link to={url} {...commonProps}>
+        {children}
+      </Link>
+    );
+  } else {
+    if (isHomePage) {
+      return (
+        <AnchorLink href={url} {...commonProps}>
+          {children}
+        </AnchorLink>
+      );
+    } else {
+      return (
+        <NavLink to='/' {...commonProps}>
+          {children}
+        </NavLink>
+      );
+    }
+  }
+};
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
+
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".header");
+      if (window.scrollY >= 80) {
+        header.classList.add("scroll-header");
+      } else {
+        header.classList.remove("scroll-header");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleNavItemClick = (id) => {
     setActiveNav(id);
-    showMenu(false);
+    setIsMenuOpen(false);
   };
 
-  const NavigationLink = ({ id, url, routerLink, children }) => (
-    <>
-      {routerLink ? (
-        <NavLink
-          to={url}
-          onClick={() => handleNavItemClick(`${id}`)}
-          className={activeNav === id ? "nav__link active-link" : "nav__link"}
-        >
-          {children}
-        </NavLink>
-      ) : (
-        <a
-          href={url}
-          onClick={() => handleNavItemClick(`${id}`)}
-          className={activeNav === id ? "nav__link active-link" : "nav__link"}
-        >
-          {children}
-        </a>
-      )}
-    </>
-  );
+  useEffect(() => {
+    const targetSection = document.getElementById(activeNav.substring(1));
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location.pathname]);
 
   return (
     <header className='header'>
@@ -63,30 +102,36 @@ const Header = () => {
           <span className='grey-color'>/&gt;</span>
         </Link>
 
-        <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
+        <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`}>
           <ul className='nav__list'>
-            {navLinks.map(({ id, name, url, icon, routerLink }, index) => {
-              return (
-                <li className='nav__item' key={index}>
-                  <NavigationLink id={id} url={url} routerLink={routerLink}>
-                    <DynamicIcon name={icon} className={"nav__icon"} />
-                    {name}
-                  </NavigationLink>
-                </li>
-              );
-            })}
+            {navLinks.map(({ id, name, url, icon, routerLink }, index) => (
+              <li className='nav__item' key={index}>
+                <NavigationLink
+                  id={id}
+                  url={url}
+                  routerLink={routerLink}
+                  activeNav={activeNav}
+                  handleNavItemClick={handleNavItemClick}
+                  isHomePage={isHomePage}
+                >
+                  <DynamicIcon name={icon} className='nav__icon' />
+                  {name}
+                </NavigationLink>
+              </li>
+            ))}
           </ul>
           {/* TODO: Lofi music player to be added here */}
           <ResumeLink href={Resume} target='_blank' rel='noopener noreferrer'>
             Resume
           </ResumeLink>
         </div>
-        {Toggle && (
-          <HiX className='nav__close' onClick={() => showMenu(!Toggle)} />
+        {isMenuOpen && (
+          <HiX
+            className='nav__close'
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          />
         )}
-        {/* {Toggle && <div className='nav__overlay' />} */}
-
-        <div className='nav__toggle' onClick={() => showMenu(!Toggle)}>
+        <div className='nav__toggle' onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <HiOutlineMenu />
         </div>
       </nav>
