@@ -13,7 +13,15 @@ const Plum = () => {
   const isActive = useRef(false);
 
   useLayoutEffect(() => {
-    drawPlum(canvasRef, size, start, MIN_BRANCH, len, stopped, isActive);
+    const canvas = canvasRef.current;
+
+    if (!canvas) {
+      // Canvas element not available, don't proceed
+      return;
+    }
+
+    // Draw the plum roots on the canvas
+    drawPlum(canvas, size, start, MIN_BRANCH, len, stopped, isActive);
   }, [size.width]);
 
   return (

@@ -71,17 +71,8 @@ const framesAnimationControl = (frame, isActive) => {
   return { resume, pause };
 };
 
-const drawPlum = (
-  canvasRef,
-  size,
-  start,
-  MIN_BRANCH,
-  len,
-  stopped,
-  isActive
-) => {
+const drawPlum = (canvas, size, start, MIN_BRANCH, len, stopped, isActive) => {
   // Get the canvas and context
-  const canvas = canvasRef.current;
   const { ctx } = initCanvas(canvas, size.width, size.height);
   const { width, height } = canvas;
 
@@ -91,7 +82,7 @@ const drawPlum = (
 
   // Recursive Step Function
   const step = (x, y, rad, counter = { value: 0 }) => {
-    const length = random() * len.current;
+    const length = random() * 2 * len.current;
     counter.value += 1;
 
     const [nx, ny] = polar2cart(x, y, length, rad);
@@ -113,7 +104,7 @@ const drawPlum = (
     )
       return;
 
-    const rate = counter.value <= MIN_BRANCH ? 0.8 : 0.5;
+    const rate = counter.value <= MIN_BRANCH ? 1 : 0.5;
 
     // Add left branch to steps
     if (random() < rate) steps.push(() => step(nx, ny, rad1, counter));
@@ -140,6 +131,7 @@ const drawPlum = (
     // Execute all the steps from the previous frame
     prevSteps.forEach((i) => {
       // 50% chance to keep the step for the next frame, to create a more organic look
+      console.log("prevSteps", i);
       if (random() < 0.5) steps.push(i);
       else i();
     });
@@ -149,21 +141,31 @@ const drawPlum = (
   let { resume, pause } = framesAnimationControl(frame, isActive);
 
   // Randomly generate middle point between 0.2 and 0.8
-  const randomMiddle = () => random() * 0.6 + 0.2;
+  const randomMiddle = () => random() * 0.8 + 0.2;
 
   // Start the Plum drawing
   start.current = () => {
     pause();
     ctx.clearRect(0, 0, width, height);
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 0.8;
     ctx.strokeStyle = color;
     prevSteps = [];
     steps = [
       () => step(randomMiddle() * size.width, -5, r90),
-      () => step(randomMiddle() * size.width, size.height + 5, -r90),
-      () => step(-5, randomMiddle() * size.height, 0),
+      () => step(randomMiddle() * size.width, -5, r90),
+      () => step(randomMiddle() * size.width, -5, r90),
+      () => step(randomMiddle() * size.width, -5, r90),
+      () => step(5, randomMiddle() * size.height, 0),
+      () => step(5, randomMiddle() * size.height, 0),
+      () => step(5, randomMiddle() * size.height, 0),
+      () => step(5, randomMiddle() * size.height, 0),
       () => step(size.width + 5, randomMiddle() * size.height, r180),
+      () => step(size.width + 5, randomMiddle() * size.height, r180),
+      () => step(size.width + 5, randomMiddle() * size.height, r180),
+      () => step(randomMiddle() * size.width, size.height + 5, -r90),
+      () => step(randomMiddle() * size.width, size.height + 5, -r90),
     ];
+
     if (size.width < 500) steps = steps.slice(0, 2);
     resume();
     stopped.current = false;
@@ -174,5 +176,5 @@ const drawPlum = (
 
 export default drawPlum;
 
-// Credit: Anthony Fu - antfu.me
+// Original using Vue: Anthony Fu - antfu.me
 // Reference: https://github.com/antfu/antfu.me/blob/main/src/components/Plum.vue
